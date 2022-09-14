@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DemoBlanze Test Suite" verbose="4" thread-count="4" parallel="tests">
+
+	<listeners>
+		<listener class-name="com.qa.demoblaze.listeners.ExtentReportListener" />
+		
+		<listener class-name="com.qa.demoblaze.listeners.TestAllureListener" />
+		
+		<listener class-name="com.qa.demoblaze.listeners.AnnotationTransformer" />
+
+	</listeners>
+
+
+	<test name="DemoBlaze Login Page Test">
+		<classes>
+			<class name="com.qa.demoblaze.tests.LoginPageTest" />
+		</classes>
+
+	</test>
+	
+	<test name="DemoBlaze Login Page Negative Test">
+		<classes>
+			<class name="com.qa.demoblaze.tests.LoginPageNegativeTest" />
+		</classes>
+
+	</test>
+
+	<test name="DemoBlanze Product Info Page Test">
+		<classes>
+			<class name="com.qa.demoblaze.tests.ProductInfoPageTest" />
+		</classes>
+
+	</test>
+
+	<test name="DemoBlanze Product Details Page Test">
+		<classes>
+			<class name="com.qa.demoblaze.tests.ProductDetailsPageTest" />
+		</classes>
+
+	</test>
+
+
+</suite>
