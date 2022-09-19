@@ -34,12 +34,14 @@ public class LoginPage {
 	}
 
 	@Step("Login to the DemoBlaze Application with Username {0} and Password {1}.......")
-	public ProductPage doLogin(String un, String Pwd) {
+	public ProductPage doLogin(String un, String Pwd) throws InterruptedException {
 		eleutil.waitForElementToBeVisible(clicklogin, Constants.DEFAULT_TIMEOUT).click();
-		eleutil.waitForElementToBeVisible(username, Constants.DEFAULT_TIMEOUT).sendKeys(un);
+		Thread.sleep(2000);
+		if(eleutil.waitForElementToBeVisible(username, Constants.DEFAULT_TIMEOUT).isDisplayed()) {
+			eleutil.waitForElementToBeVisible(username, Constants.DEFAULT_TIMEOUT).sendKeys(un);
 		eleutil.doSendKeys(password, Pwd);
 		eleutil.doClick(loginbtn);
-
+		}
 		return new ProductPage(driver);
 
 	}

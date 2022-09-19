@@ -19,7 +19,7 @@ import io.qameta.allure.SeverityLevel;
 public class ProductInfoPageTest extends BaseTest {
 
 	@BeforeClass
-	public void productInfoSetUp()  {
+	public void productInfoSetUp() throws InterruptedException  {
 		productPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
