@@ -16,7 +16,7 @@ public class ProductPage {
 	private WebDriver driver;
 	private ElementUtil eleutil;
 
-	private By sucessLoginMsg = By.xpath("//a[text()='Welcome amitghute']");
+	private By sucessLoginMsg = By.xpath("//*[@id=\"nameofuser\"]");
 	private By categoryList = By.xpath("//*[@id=\"itemc\"]");
 
 	public ProductPage(WebDriver driver) {

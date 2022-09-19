@@ -67,7 +67,7 @@ public class ProductDetailsPageTest extends BaseTest {
 	@Test(dataProvider = "getCustomerDeatail")
 	@Description("Select Main Product Test.......")
 	@Severity(SeverityLevel.BLOCKER)
-	public void selectProduct(String Name,String state,String city,String cardNo,String Month,String year) throws InterruptedException {
+	public void selectProductTest(String Name,String state,String city,String cardNo,String Month,String year) throws InterruptedException {
 		cartPage.selectProduct("HTC One M9");
 		cartPage.cartCount();
 		cartPage.purchaseOrder(Name, state, city, cardNo,Month,year);

@@ -18,7 +18,7 @@ public class LoginPage {
 
 	private WebDriver driver;
 	private ElementUtil eleutil;
-	private By clicklogin = By.xpath("//*[@id=\"login2\"]");
+	private By clicklogin = By.cssSelector("#login2.nav-link");
 	private By username = By.xpath("//*[@id=\"loginusername\"]");
 	private By password = By.id("loginpassword");
 	private By loginbtn = By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]");
@@ -35,12 +35,14 @@ public class LoginPage {
 
 	@Step("Login to the DemoBlaze Application with Username {0} and Password {1}.......")
 	public ProductPage doLogin(String un, String Pwd) throws InterruptedException {
+		if(eleutil.waitForElementToBeVisible(clicklogin,Constants.DEFAULT_TIMEOUT).isDisplayed()) {
 		eleutil.waitForElementToBeVisible(clicklogin, Constants.DEFAULT_TIMEOUT).click();
 		Thread.sleep(2000);
 		if(eleutil.waitForElementToBeVisible(username, Constants.DEFAULT_TIMEOUT).isDisplayed()) {
 			eleutil.waitForElementToBeVisible(username, Constants.DEFAULT_TIMEOUT).sendKeys(un);
 		eleutil.doSendKeys(password, Pwd);
 		eleutil.doClick(loginbtn);
+		}
 		}
 		return new ProductPage(driver);
 

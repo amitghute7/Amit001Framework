@@ -51,7 +51,7 @@ public class LoginPageTest extends BaseTest {
 	@Severity(SeverityLevel.BLOCKER)
 	public void doLoginTest() throws InterruptedException  {
 		productPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-		Assert.assertTrue(loginpage.getLoginSucess(), Constants.Login_SUCCESS_MSSG);
+		Assert.assertTrue(loginpage.getLoginSucess());
 	}
 
 }

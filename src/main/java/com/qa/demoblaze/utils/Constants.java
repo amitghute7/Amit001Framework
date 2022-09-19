@@ -9,7 +9,7 @@ public class Constants {
 	public static final int LOGIN_PAGE_TITLE_TIMEOUT=5;
 	public static final int DEFAULT_TIMEOUT= 15;
 	public static final String LOGIN_PAGE_URL = "https://www.demoblaze.com/index.html";
-	public static final String Login_SUCCESS_MSSG = "Welcome amitghute";
+	//public static final String Login_SUCCESS_MSSG = "Welcome amitghute";
 	public static final String REGISTER_SHEET_NAME ="Register";
 	public static final String ProductInfoPage_Fraction_Url = "/index.html#";
 	public static final int DEFAULT_TIMEOUT_FOR_ALERT = 5;
