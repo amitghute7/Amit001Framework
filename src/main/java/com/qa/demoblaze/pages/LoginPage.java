@@ -22,7 +22,7 @@ public class LoginPage {
 	private By username = By.xpath("//*[@id=\"loginusername\"]");
 	private By password = By.id("loginpassword");
 	private By loginbtn = By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]");
-	private By welcomeuser = By.xpath("//*[@id=\"nameofuser\"]");
+	private By welcomeuser = By.cssSelector("a.nav-link#nameofuser");
 	private By headerText = By.id("nava");
 
 	private By closeBtn = By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[1]");
