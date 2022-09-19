@@ -25,13 +25,23 @@ public class ProductDetailsPageTest extends BaseTest {
 	@BeforeClass
 	public void ProductDetailsPageTestSetUp() throws InterruptedException {
 		productPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		productInfoPage = productPage.getSelectProduct("Laptops");
 
+	}
+	
+
+	@DataProvider
+	public Object[][] getProductDatas() {
+		return new Object[][] {
+			{"Laptops","2017 Dell 15.6 Inch"}
+			
+		};
 	}
 	
 	@DataProvider
 	public Object[][] getProductData() {
 		return new Object[][] {
-			{"Laptops","2017 Dell 15.6 Inch"}
+			{"2017 Dell 15.6 Inch"}
 			
 		};
 	}
@@ -40,8 +50,8 @@ public class ProductDetailsPageTest extends BaseTest {
 	@Test(dataProvider = "getProductData")
 	@Description("Product add to cart Test.......")
 	@Severity(SeverityLevel.BLOCKER)
-	public void productAddToCartTest(String product,String actProduct) throws InterruptedException {
-		productInfoPage = productPage.getSelectProduct(product);
+	public void productAddToCartTest(String actProduct) throws InterruptedException {
+	//	productInfoPage = productPage.getSelectProduct(product);
 		productResultPage = productInfoPage.getSelectMainProduct(actProduct);
 		cartPage = productResultPage.getProductAddTocart();
 		Assert.assertTrue(productInfoPage.getproductHeader().contains(actProduct));
