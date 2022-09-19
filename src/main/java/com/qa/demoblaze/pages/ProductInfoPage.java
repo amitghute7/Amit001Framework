@@ -69,8 +69,10 @@ public class ProductInfoPage {
 	}
 
 	@Step("Get Main Product Result List............")
-	public List<String> getMainProductResultList() {
+	public List<String> getMainProductResultList() throws InterruptedException {
+		Thread.sleep(2000);
 		List<WebElement> productList = eleutil.waitForElementsToBeVisible(products, Constants.DEFAULT_TIMEOUT);
+		
 		List<String> actProductList = new ArrayList<String>();
 		for (WebElement e : productList) {
 			String text = e.getText();

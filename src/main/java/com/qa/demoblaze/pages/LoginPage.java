@@ -19,7 +19,7 @@ public class LoginPage {
 	private WebDriver driver;
 	private ElementUtil eleutil;
 	private By clicklogin = By.id("login2");
-	private By username = By.id("loginusername");
+	private By username = By.xpath("//*[@id=\"loginusername\"]");
 	private By password = By.id("loginpassword");
 	private By loginbtn = By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]");
 	private By welcomeuser = By.xpath("//*[@id=\"nameofuser\"]");
