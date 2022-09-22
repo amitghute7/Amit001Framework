@@ -136,12 +136,15 @@ public class CartPage {
 
 	@Step("Do Sucess Order Purchase.........")
 	public String doSucessOrderPurchase() {
-		WebElement sucessPurchaseMsg = eleutil.waitForElementToBeVisible(successPurchase, Constants.DEFAULT_TIMEOUT);
-		String text = sucessPurchaseMsg.getText();
-		System.out.println(text);
-		oderDetails();
-		accLogout();
-		return text;
+		if (eleutil.getElement(successPurchase).isDisplayed()) {
+			String text = eleutil.getElement(successPurchase).getText();
+			System.out.println(text);
+			oderDetails();
+			accLogout();
+
+			return text;
+		}
+		return null;
 	}
 
 	@Step("Order Details......")
